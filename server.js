@@ -3,6 +3,9 @@ const nodemailer = require('nodemailer');
 const multiparty = require('multiparty');
 require('dotenv').config();
 
+// set port for testing
+const PORT = process.env.PORT || 5000;
+
 // initialize express app
 const app = express();
 
@@ -11,8 +14,8 @@ app.route("/").get(function(req, res) {
     res.sendfile(process.cwd() + "/public/index.html");
 });
 
-// set port for testing
-const PORT = process.env.PORT || 5000;
+
+// express server listening
 app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`);
 });
