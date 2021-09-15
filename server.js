@@ -14,12 +14,12 @@ const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
     auth: {
-        type: 'OAuth2',
+        // type: 'OAuth2',
         user: process.env.EMAIL,
         pass: process.env.PASS,
-        clientId: process.env.OAUTH_CLIENT_ID,
-        clientSecret: process.env.OAUTH_CLIENT_SECRET,
-        refreshToken: process.env.OAUTH_REFRESH_TOKEN
+        // clientId: process.env.OAUTH_CLIENT_ID,
+        // clientSecret: process.env.OAUTH_CLIENT_SECRET,
+        // refreshToken: process.env.OAUTH_REFRESH_TOKEN
     }
 });
 
