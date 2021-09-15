@@ -57,7 +57,7 @@ app.post("/send", (req, res) => {
 
 // make contact the first page on the app
 app.route("/").get(function(req, res) {
-    res.send(process.cwd() + "/public/index.html");
+    res.sendFile(process.cwd() + "/public/index.html");
 });
 
 // express server listening
