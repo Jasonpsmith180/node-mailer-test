@@ -11,12 +11,15 @@ const app = express();
 
 // create transporter object
 const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
+    service: "gmail",
     auth: {
+        type: 'OAuth2',
         user: process.env.EMAIL,
-        pass: process.env.PASS
-    },
+        pass: process.env.PASS,
+        clientId: process.env.OAUTH_CLIENTID,
+        clientSecret: process.env.OAUTH_CLIENT_SECRET,
+        refreshToken: process.env.OAUTH_REFRESH_TOKEN
+    }
 });
 
 // verify connection config
